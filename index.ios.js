@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -12,42 +6,93 @@ import {
   View
 } from 'react-native';
 
+import RNAChart from 'react-native-animate-chart'
+
 export default class AnimateChartDemo extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+      <View>
+        <RNAChart
+          title="This is a demo project"
+          subtitle="Good Job"
+          width="320"
+          height="300"
+          series = { this.getSeries() }
+          />
       </View>
     );
   }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+  getSeries() {
+    return [
+      {
+        data:12,
+        normalFill:`rgb(${this.rnd()},${this.rnd()},${this.rnd()})`,
+        activeFill:"#029ff9",
+        normalStroke:"#4990E2",
+        activeStroke:"#4990E2"
+      },{
+        data:32,
+        normalFill:`rgb(${this.rnd()},${this.rnd()},${this.rnd()})`,
+        activeFill:"#029ff9",
+        normalStroke:"#4990E2",
+        activeStroke:"#4990E2"
+      },{
+        data:54,
+        normalFill:`rgb(${this.rnd()},${this.rnd()},${this.rnd()})`,
+        activeFill:"#029ff9",
+        normalStroke:"#4990E2",
+        activeStroke:"#4990E2"
+      },{
+        data:12,
+        normalFill:`rgb(${this.rnd()},${this.rnd()},${this.rnd()})`,
+        activeFill:"#029ff9",
+        normalStroke:"#4990E2",
+        activeStroke:"#4990E2"
+      },{
+        data:43,
+        normalFill:`rgb(${this.rnd()},${this.rnd()},${this.rnd()})`,
+        activeFill:"#029ff9",
+        normalStroke:"#4990E2",
+        activeStroke:"#4990E2"
+      },{
+        data:20,
+        normalFill:`rgb(${this.rnd()},${this.rnd()},${this.rnd()})`,
+        activeFill:"#029ff9",
+        normalStroke:"#4990E2",
+        activeStroke:"#4990E2"
+      },{
+        data:18,
+        normalFill:`rgb(${this.rnd()},${this.rnd()},${this.rnd()})`,
+        activeFill:"#029ff9",
+        normalStroke:"#4990E2",
+        activeStroke:"#4990E2"
+      },{
+        data:32,
+        normalFill:`rgb(${this.rnd()},${this.rnd()},${this.rnd()})`,
+        activeFill:"#029ff9",
+        normalStroke:"#4990E2",
+        activeStroke:"#4990E2"
+      },{
+        data:30,
+        normalFill:`rgb(${this.rnd()},${this.rnd()},${this.rnd()})`,
+        activeFill:"#029ff9",
+        normalStroke:"#4990E2",
+        activeStroke:"#4990E2"
+      },{
+        data:17,
+        normalFill:`rgb(${this.rnd()},${this.rnd()},${this.rnd()})`,
+        activeFill:"#029ff9",
+        normalStroke:"#4990E2",
+        activeStroke:"#4990E2"
+      }
+    ]
+  }
+
+
+  rnd(){
+    return parseInt(200*Math.random()+55)
+  }
+}
 
 AppRegistry.registerComponent('AnimateChartDemo', () => AnimateChartDemo);
